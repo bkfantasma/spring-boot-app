@@ -1,18 +1,27 @@
 package br.gov.sp.fatec.springbootapp.Entity;
 
+/*import java.util.Set;*/
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+/*import javax.persistence.FetchType;*/
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+/*import javax.persistence.JoinColumn;*/
+/*import javax.persistence.JoinTable;*/
+/*import javax.persistence.ManyToMany;*/
 import javax.persistence.Table;
+
+/*import org.hibernate.annotations.ManyToAny;*/
+/*import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;*/
 
 import javafx.scene.chart.PieChart.Data;
 
 @Entity
 @Table(name = "ESTOQUE")
 public class Estoque {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -27,34 +36,54 @@ public class Estoque {
     @Column(name = "QUANTIDADE")
     private long quantidade;
 
-    /*@Column(name = "ID_PRODUTO")
-    private long idProduto; */
+    /*
+     * @Column(name = "ID_PRODUTO") 
+     * @ManyToMany(fetch = FetchType.EAGER)
+     * @ManyToMany(fetch = FetchType.EAGER)
+            @JoinTable(name = "Produto", 
+                joinColumns = { @JoinColumn(name= "ID_PRODUTO")},
+                inverseJoinColumns = {@JoinColumn(name= "ID")}
+        )
+     * private long idProduto;
+       private Set<Item> itens;
+       
+       
+       public Set<Item> getID(){
+           return this.ID;
+        }
+        public void setID(final Long ID) {
+            this.ID = ID;
+        } 
+        */
 
     public Long getID(){
         return this.ID;
     }
-    public void setID(Long ID){
+    public void setID(final Long ID) {
         this.ID = ID;
     }
 
-    public Data getDataEntradaProduto(){
+    public Data getDataEntradaProduto() {
         return this.dataEntradaProduto;
     }
-    public void setDataEntradaProduto(Data dataEntradaProduto) {
+
+    public void setDataEntradaProduto(final Data dataEntradaProduto) {
         this.dataEntradaProduto = dataEntradaProduto;
     }
 
-    public Data getDataSaidaProduto(){
+    public Data getDataSaidaProduto() {
         return this.dataSaidaProduto;
     }
-    public void setDataSaidaProduto(Data dataSaidaProduto) {
+
+    public void setDataSaidaProduto(final Data dataSaidaProduto) {
         this.dataSaidaProduto = dataSaidaProduto;
     }
 
-    public Long getQuantidade(){
+    public Long getQuantidade() {
         return this.quantidade;
     }
-    public void setQuantidade(Long quantidade) {
+
+    public void setQuantidade(final Long quantidade) {
         this.quantidade = quantidade;
     }
 
