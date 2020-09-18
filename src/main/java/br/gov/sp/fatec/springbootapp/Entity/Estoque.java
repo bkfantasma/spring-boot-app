@@ -27,8 +27,8 @@ public class Estoque {
     @Column(name = "QUANTIDADE")
     private long quantidade;
 
-    @Column(name = "ID_PRODUTO")
-    private long idProduto;
+    /*@Column(name = "ID_PRODUTO")
+    private long idProduto; */
 
     public Long getID(){
         return this.ID;
@@ -58,11 +58,11 @@ public class Estoque {
         this.quantidade = quantidade;
     }
 
-    public Long getIdProduto(){
+    /* public Long getIdProduto(){
         return this.idProduto;
     }
     public void setIdProduto(Long idProduto){
         this.idProduto = idProduto;
-    }
+    } */
 
 }

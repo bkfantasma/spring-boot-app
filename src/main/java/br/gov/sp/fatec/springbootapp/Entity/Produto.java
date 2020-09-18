@@ -63,4 +63,7 @@ public class Produto {
         this.status = status;
     }
 
+    public void setValorCompra(int i, int j) {
+    }
+
 }
