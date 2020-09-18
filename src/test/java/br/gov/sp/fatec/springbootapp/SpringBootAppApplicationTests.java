@@ -1,5 +1,7 @@
 package br.gov.sp.fatec.springbootapp;
 
+import static org.junit.Assert.assertNotNull;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -18,12 +20,11 @@ class SpringBootAppApplicationTests {
 
     @Test
     void testeInsercao() {
-        Produto produto = new Produto();
+        final Produto produto = new Produto();
         produto.setDescricao("embalagem");
         produto.setValorCompra(10,00);
         produtoRepo.save(produto);
-
-        
+        assertNotNull(produto.getID());
     }
 
 }
