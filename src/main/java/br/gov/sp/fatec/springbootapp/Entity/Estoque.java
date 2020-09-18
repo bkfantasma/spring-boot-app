@@ -13,7 +13,7 @@ import javax.persistence.Id;
 /*import javax.persistence.ManyToMany;*/
 import javax.persistence.Table;
 
-/*import org.hibernate.annotations.ManyToAny;*/
+/*import org.hibernate.annotations.ManyToMany;*/
 /*import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;*/
 
 import javafx.scene.chart.PieChart.Data;
