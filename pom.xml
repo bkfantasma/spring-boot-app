@@ -56,6 +56,20 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <artifactId>mysql-connector-java</artifactId>
     </dependency>
 </dependencies>
+<profiles>
+    <profile>
+        <id>profile1</id>
+        <properties>
+        <spring.boot.mainclass>com.SomeClass</spring.boot.mainclass>
+        </properties>
+    </profile>
+    <profile>
+        <id>profile2</id>
+        <properties>
+        <spring.boot.mainclass>com.SomeOtherClass</spring.boot.mainclass>
+        </properties>
+    </profile>
+</profiles>
 <build>
     <plugins>
         <plugin>
@@ -78,7 +92,6 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
             </execution>
             </executions>
         </plugin>
-
     </plugins>
 </build>
 </project>
