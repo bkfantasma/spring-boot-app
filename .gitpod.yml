@@ -1,4 +1,4 @@
-PORTS: 
+ports: 
   - port: 8080
 
 tasks: 
