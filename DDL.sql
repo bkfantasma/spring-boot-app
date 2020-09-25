@@ -2,10 +2,6 @@ create schema estoque;
 
 use estoque;
 
-create user 'user'@'localhost' identified by 'pass123';
-
-grant select, insert, delete, update on estoque.* to user@'localhost'
-
 CREATE TABLE PRODUTO (
 	ID BIGINT NOT NULL AUTO_INCREMENT,
 	DESCRICAO VARCHAR(255) NOT NULL,
