@@ -1,4 +1,4 @@
-package br.gov.sp.fatec.springbootapp.Entity;
+
 
 /*import java.util.Set;*/
 
@@ -86,7 +86,7 @@ public class Estoque {
      public Long getIdProduto(){
         return this.idProduto;
     }
-    public void setIdProduto(Long idProduto){
+    public void setIdProduto(final Long idProduto) {
         this.idProduto = idProduto;
     } 
 

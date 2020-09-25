@@ -8,7 +8,6 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.gov.sp.fatec.springbootapp.Entity.Produto;
-import br.gov.sp.fatec.springbootapp.Repository.ProdutoRepository;
 
 @SpringBootTest
 @Transactional
