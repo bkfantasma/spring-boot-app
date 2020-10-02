@@ -1,6 +1,6 @@
 package br.gov.sp.fatec.springbootapp;
 
-import br.gov.sp.fatec.springbootapp.Entity.Produto;
+import br.gov.sp.fatec.springbootapp.entity.Produto;
 
 public class ProdutoRepository {
 

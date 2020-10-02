@@ -1,4 +1,5 @@
 
+package br.gov.sp.fatec.springbootapp.entity;
 
 /*import java.util.Set;*/
 
