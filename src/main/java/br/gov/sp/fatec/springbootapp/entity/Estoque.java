@@ -37,12 +37,12 @@ public class Estoque {
     private long quantidade;
 
     
-     @Column(name = "ID_PRODUTO") 
-     @ManyToMany(fetch = FetchType.EAGER)
+    @Column(name = "ID_PRODUTO") 
+    @ManyToMany(fetch = FetchType.EAGER)
             @JoinTable(name = "Produto", 
                 joinColumns = { @JoinColumn(name= "ID_PRODUTO")},
                 inverseJoinColumns = {@JoinColumn(name= "ID")}
-        )
+            )
     private long idProduto;
     
     public Long getID() {
@@ -52,13 +52,6 @@ public class Estoque {
             this.ID = ID;
         } 
         
-
-   /* public Long getID(){
-        return this.ID;
-    }
-    public void setID(final Long ID) {
-        this.ID = ID;
-    }*/
 
     public Data getDataEntradaProduto() {
         return this.dataEntradaProduto;

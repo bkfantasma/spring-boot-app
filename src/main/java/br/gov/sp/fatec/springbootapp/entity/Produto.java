@@ -20,10 +20,10 @@ public class Produto {
     private String descricao;
 
     @Column(name = "VALOR_COMPRA")
-    private Float valorCompra;
+    private double valorCompra;
 
     @Column(name = "VALOR_VENDA")
-    private Float valorVenda;
+    private double valorVenda;
 
     @Column(name = "STATUS")
     private Boolean status;
@@ -43,22 +43,20 @@ public class Produto {
     }
 
     public Float getValorCompra(){
-        return this.valorCompra;
+        return (float) this.valorCompra;
     }
-    public void setValorCompra(int i, int j) {
+   
+    public void setValorCompra(double valorCompra) {
+        this.valorCompra = (float) valorCompra;
     }
-   // public void setValorCompra(Float valorCompra){
-   //     this.valorCompra = valorCompra;
-  //  }
 
     public Float getValorVenda(){
-        return this.valorVenda;
+        return (float) this.valorVenda;
     }
-    public void setValorVenda(int i, int j) {
+
+    public void setValorVenda(double valorVenda) {
+        this.valorCompra = (float) valorVenda;
     }
-    //public void setValorVenda(Float valorVenda){
-    //    this.valorVenda = valorVenda;
-   // }
 
     public Boolean getStatus(){
         return this.status;
@@ -66,9 +64,4 @@ public class Produto {
     public void setStatus(Boolean status){
         this.status = status;
     }
-
-    
-
-    
-
 }

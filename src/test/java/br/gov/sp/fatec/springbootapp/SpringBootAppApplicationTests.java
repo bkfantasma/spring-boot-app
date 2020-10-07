@@ -25,8 +25,8 @@ class SpringBootAppApplicationTests {
     void testeInsercao() {
         Produto produto = new Produto();
         produto.setDescricao("embalagem");
-        produto.setValorCompra(10,00);
-        produto.setValorVenda(10,50);
+        produto.setValorCompra(10.00);
+        produto.setValorVenda(10.50);
         produto.setStatus(true);
         produtoRepo.save(produto);
         assertNotNull(produto.getID());
