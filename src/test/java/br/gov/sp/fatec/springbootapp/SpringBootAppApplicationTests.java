@@ -23,11 +23,12 @@ class SpringBootAppApplicationTests {
 
     @Test
     void testeInsercao() {
-        final Produto produto = new Produto();
+        Produto produto = new Produto();
         produto.setDescricao("embalagem");
         produto.setValorCompra(10,00);
-       // produtoRepo.save(produto);
+        produto.setValorVenda(10,50);
+        produto.setStatus(true);
+        produtoRepo.save(produto);
         assertNotNull(produto.getID());
     }
-
 }

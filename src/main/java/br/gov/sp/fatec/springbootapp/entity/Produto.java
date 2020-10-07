@@ -45,25 +45,30 @@ public class Produto {
     public Float getValorCompra(){
         return this.valorCompra;
     }
-    public void setValorCompra(Float valorCompra){
-        this.valorCompra = valorCompra;
+    public void setValorCompra(int i, int j) {
     }
+   // public void setValorCompra(Float valorCompra){
+   //     this.valorCompra = valorCompra;
+  //  }
 
     public Float getValorVenda(){
         return this.valorVenda;
     }
-    public void getValorVenda(Float valorVenda){
-        this.valorVenda = valorVenda;
+    public void setValorVenda(int i, int j) {
     }
+    //public void setValorVenda(Float valorVenda){
+    //    this.valorVenda = valorVenda;
+   // }
 
     public Boolean getStatus(){
         return this.status;
     }
-    public void getStatus(Boolean status){
+    public void setStatus(Boolean status){
         this.status = status;
     }
 
-    public void setValorCompra(int i, int j) {
-    }
+    
+
+    
 
 }
