@@ -1,7 +1,7 @@
 
 package br.gov.sp.fatec.springbootapp.entity;
 
-/*import java.util.Set;*/
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-/*import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;*/
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 
 import javafx.scene.chart.PieChart.Data;
 
@@ -39,7 +39,7 @@ public class Estoque {
     
     @Column(name = "ID_PRODUTO") 
     @ManyToMany(fetch = FetchType.EAGER)
-            @JoinTable(name = "Produto", 
+            @JoinTable(name = "PRODUTO", 
                 joinColumns = { @JoinColumn(name= "ID_PRODUTO")},
                 inverseJoinColumns = {@JoinColumn(name= "ID")}
             )
