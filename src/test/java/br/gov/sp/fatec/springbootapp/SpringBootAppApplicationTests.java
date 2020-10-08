@@ -31,4 +31,10 @@ class SpringBootAppApplicationTests {
         produtoRepo.save(produto);
         assertNotNull(produto.getID());
     }
+
+    @Test
+    void testeInserts() {
+        Produto produto = (Produto) produtoRepo.findByid(1L);
+        assertNotNull(produto.getID());
+    }
 }

@@ -7,4 +7,8 @@ public class ProdutoRepository {
     public void save(Produto produto) {
     }
 
+    public Object findByid(long l) {
+        return null;
+    }
+
 }
