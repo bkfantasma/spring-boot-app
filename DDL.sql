@@ -2,21 +2,21 @@ create schema estoque;
 
 use estoque;
 
-CREATE TABLE produto (
-	ID BIGINT NOT NULL AUTO_INCREMENT,
-	DESCRICAO VARCHAR(255) NOT NULL,
-	VALOR_COMPRA FLOAT (4,2) NOT NULL,
-	VALOR_VENDA FLOAT (4,2) NOT NULL,
-	STATUS BOOLEAN NOT NULL,
-	PRIMARY KEY (ID)
+create table produto (
+id bigint not null auto_increment,
+descricao varchar(255) not null,
+valor_compra float (4,2) not null,
+valor_venda float (4,2) not null,
+status boolean not null,
+primary key (id)
 );
 
-CREATE TABLE estoque (
-	ID BIGINT NOT NULL AUTO_INCREMENT,
-	DATA_ENTRADA_PRODUTO TIMESTAMP NOT NULL,
-	DATA_SAIDA_PRODUTO TIMESTAMP NOT NULL,
-	QUANTIDADE BIGINT NOT NULL,
-	ID_PRODUTO BIGINT NOT NULL,
-	PRIMARY KEY (ID),
-	FOREIGN KEY ID_PRODUTO_FK (ID_PRODUTO) REFERENCES PRODUTO(ID)  
+create table estoque (
+id bigint not null auto_increment,
+data_entrada_produto timestamp not null,
+data_saida_produto timestamp not null,
+quantidade bigint not null,
+id_produto bigint not null,
+primary key (id),
+foreign key id_produto_fk (id_produto) references produto(id) 
 );
