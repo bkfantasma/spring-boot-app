@@ -33,12 +33,12 @@ public class Estoque<ID> {
     private long quantidade;
     
     @Column(name = "ID_PRODUTO") 
-    private long idProduto;
     @ManyToMany(fetch = FetchType.EAGER)
             @JoinTable(name = "PRODUTO", 
                 joinColumns = { @JoinColumn(name= "ID_PRODUTO")},
                 inverseJoinColumns = {@JoinColumn(name= "ID")}
             )
+    private long idProduto;
     
     public Long getID() {
            return this.ID;
