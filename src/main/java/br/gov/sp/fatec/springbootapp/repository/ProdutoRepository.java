@@ -15,6 +15,6 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 
     public Produto findByValorVendaAndValorCompra(double d, double e);
 
-    public List<Produto> findByEstoqueQuantidade(long estoque);
+    public List<Produto> findByQuantidade(long estoque);
     
 }
