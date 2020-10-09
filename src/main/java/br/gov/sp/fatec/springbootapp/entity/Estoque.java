@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ESTOQUE")
+@Table(name = "estoque")
 public class Estoque {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +35,6 @@ public class Estoque {
     public void setID(final Long ID) {
         this.ID = ID;
     } 
-        
 
     public Calendar getDataEntradaProduto() {
         return this.dataEntradaProduto;
