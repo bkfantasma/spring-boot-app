@@ -16,7 +16,7 @@ import javafx.scene.chart.PieChart.Data;
 
 @Entity
 @Table(name = "ESTOQUE")
-public class Estoque {
+public class Estoque<ID> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,15 +31,14 @@ public class Estoque {
 
     @Column(name = "QUANTIDADE")
     private long quantidade;
-
     
     @Column(name = "ID_PRODUTO") 
+    private long idProduto;
     @ManyToMany(fetch = FetchType.EAGER)
             @JoinTable(name = "PRODUTO", 
                 joinColumns = { @JoinColumn(name= "ID_PRODUTO")},
                 inverseJoinColumns = {@JoinColumn(name= "ID")}
             )
-    private long idProduto;
     
     public Long getID() {
            return this.ID;
