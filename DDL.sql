@@ -1,6 +1,6 @@
-create schema estoque;
+create schema estoque2;
 
-use estoque;
+use estoque2;
 
 create table produto (
 id bigint not null auto_increment,
