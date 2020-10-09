@@ -14,8 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 import br.gov.sp.fatec.springbootapp.entity.Estoque;
 //import br.gov.sp.fatec.springbootapp.entity.Estoque;
 import br.gov.sp.fatec.springbootapp.entity.Produto;
-import br.gov.sp.fatec.springbootapp.repository.produtoRepository;
-import br.gov.sp.fatec.springbootapp.repository.estoqueRepository;
+import br.gov.sp.fatec.springbootapp.repository.ProdutoRepository;
+import br.gov.sp.fatec.springbootapp.repository.EstoqueRepository;
 
 @SpringBootTest
 @Transactional
@@ -23,10 +23,10 @@ import br.gov.sp.fatec.springbootapp.repository.estoqueRepository;
 class SpringBootAppApplicationTests {
 
     @Autowired
-    private produtoRepository produtoRepo;
+    private ProdutoRepository produtoRepo;
 
     @Autowired
-    private estoqueRepository estoqueRepo;
+    private EstoqueRepository estoqueRepo;
 
 	@Test
 	void contextLoads() {

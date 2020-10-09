@@ -4,13 +4,13 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+//import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.JoinTable;
+//import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import javafx.scene.chart.PieChart.Data;
@@ -35,11 +35,11 @@ public class Estoque {
     @Column(name = "ID_PRODUTO") 
     private long idProduto;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+   /*  @ManyToMany(fetch = FetchType.EAGER)
         @JoinTable(name = "PRODUTO", 
             joinColumns = { @JoinColumn(name= "ID_PRODUTO")},
             inverseJoinColumns = {@JoinColumn(name= "ID")}
-        )
+        )*/
     private Set<Produto> produtos;
     
     public Long getID() {

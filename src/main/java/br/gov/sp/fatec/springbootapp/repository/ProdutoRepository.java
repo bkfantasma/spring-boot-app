@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.gov.sp.fatec.springbootapp.entity.Produto;
 //import javafx.scene.chart.PieChart.Data;
 
-public interface produtoRepository extends JpaRepository<Produto, Long>{
+public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 
     public List<Produto> findByDescricaoContainsIgnoreCase(String descricao);
 
