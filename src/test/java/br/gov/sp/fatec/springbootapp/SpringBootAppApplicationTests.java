@@ -1,6 +1,6 @@
 package br.gov.sp.fatec.springbootapp;
 
-import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
@@ -49,11 +49,11 @@ class SpringBootAppApplicationTests {
 //        assertEquals("embalagem", produto.getProduto().iterator().next().getDescricao());
 //    }
 
-    @Test
-    void testaEstoque() {
-        Produto estoque = estoqueRepo.findById(1L).get();
-        assertEquals("1", estoque.getEstoques().iterator().next().getQuantidade());
-    }
+//    @Test
+//    void testaEstoque() {
+//        Estoque estoque = estoqueRepo.findById(1L).get();
+//        assertEquals("1", estoque.getEstoques().iterator().next().getQuantidade());
+//    }
 
     @Test
     void buscaProduto(){

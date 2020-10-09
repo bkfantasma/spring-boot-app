@@ -1,14 +1,10 @@
 package br.gov.sp.fatec.springbootapp.entity;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -30,9 +26,6 @@ public class Produto {
 
     @Column(name = "STATUS")
     private Boolean status;
-
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "produtos")
-    private Set<Estoque> estoque;
 
     public Long getID(){
         return this.ID;
@@ -69,13 +62,6 @@ public class Produto {
     }
     public void setStatus(Boolean status){
         this.status = status;
-    }
-
-    public Set<Estoque> getEstoques() {
-    return this.estoque;
-    }
-    public void setEstoque(Set<Estoque> estoque) {
-        this.estoque = estoque;
     }
 
     public Object getProduto() {
