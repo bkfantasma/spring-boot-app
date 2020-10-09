@@ -14,19 +14,19 @@ import javax.persistence.Table;
 public class Estoque {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long ID;
 
-    @Column(name = "DATA_ENTRADA_PRODUTO")
+    @Column(name = "data_entrada_produto")
     private Calendar dataEntradaProduto;
 
-    @Column(name = "DATA_SAIDA_PRODUTO")
+    @Column(name = "data_saida_produto")
     private Calendar dataSaidaProduto;
 
-    @Column(name = "QUANTIDADE")
+    @Column(name = "quantidade")
     private long quantidade;
     
-    @Column(name = "ID_PRODUTO") 
+    @Column(name = "id_produto") 
     private long idProduto;
     
     public Long getID() {

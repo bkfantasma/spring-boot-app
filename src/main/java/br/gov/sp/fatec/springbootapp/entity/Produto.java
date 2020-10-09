@@ -12,19 +12,19 @@ import javax.persistence.Table;
 public class Produto {
 @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Long ID;
 
-    @Column(name = "DESCRICAO")
+    @Column(name = "descricao")
     private String descricao;
 
-    @Column(name = "VALOR_COMPRA")
+    @Column(name = "valor_compra")
     private double valorCompra;
 
-    @Column(name = "VALOR_VENDA")
+    @Column(name = "valor_venda")
     private double valorVenda;
 
-    @Column(name = "STATUS")
+    @Column(name = "status")
     private Boolean status;
 
     public Long getID(){
