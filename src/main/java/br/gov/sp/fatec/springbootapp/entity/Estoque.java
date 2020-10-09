@@ -86,5 +86,9 @@ public class Estoque {
     }
     public void setProdutos(Set<Produto> produtos) {
         this.produtos = produtos;
-    } 
+    }
+
+    public Object getEstoques() {
+        return null;
+    }
 }

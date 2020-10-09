@@ -1,15 +1,21 @@
 package br.gov.sp.fatec.springbootapp;
 
-//import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.gov.sp.fatec.springbootapp.entity.Estoque;
+//import br.gov.sp.fatec.springbootapp.entity.Estoque;
 import br.gov.sp.fatec.springbootapp.entity.Produto;
-import br.gov.sp.fatec.springbootapp.repository.ProdutoRepository;
+import br.gov.sp.fatec.springbootapp.repository.produtoRepository;
+import br.gov.sp.fatec.springbootapp.repository.estoqueRepository;
 
 @SpringBootTest
 @Transactional
@@ -17,9 +23,10 @@ import br.gov.sp.fatec.springbootapp.repository.ProdutoRepository;
 class SpringBootAppApplicationTests {
 
     @Autowired
-    private ProdutoRepository produtoRepo;
+    private produtoRepository produtoRepo;
 
- 
+    @Autowired
+    private estoqueRepository estoqueRepo;
 
 	@Test
 	void contextLoads() {
@@ -39,7 +46,37 @@ class SpringBootAppApplicationTests {
 //    @Test
 //    void testeProduto() {
 //        Produto produto = produtoRepo.findById(1L).get();
-//        assertEquals("embalagem", aut.getProdutos().interator().next().getNome());
+//        assertEquals("embalagem", produto.getProduto().iterator().next().getDescricao());
 //    }
 
+    @Test
+    void testaEstoque() {
+        Produto estoque = estoqueRepo.findById(1L).get();
+        assertEquals("1", estoque.getEstoques().iterator().next().getQuantidade());
+    }
+
+    @Test
+    void buscaProduto(){
+        List<Produto> produtos = produtoRepo.findByDescricaoContainsIgnoreCase("E");
+        assertFalse(produtos.isEmpty());
+    }
+
+    @Test
+    void buscaProdutoDescicao(){
+        Produto produto = produtoRepo.findByDescricao("embalagem");
+        assertNotNull(produto);
+    }
+
+    @Test
+    void buscaValores(){
+        Produto produto = produtoRepo.findByValorVendaAndValorCompra(10.00, 15.00);
+        assertNotNull(produto);
+    }
+
+    @Test
+    void buscaQtdEstoque(){
+        Estoque estoque = estoqueRepo.findByEstoqueQuantidade(1);
+        assertNotNull(estoque);
+    }
+    
 }

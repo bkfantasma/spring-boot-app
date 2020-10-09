@@ -76,6 +76,10 @@ public class Produto {
     }
     public void setEstoque(Set<Estoque> estoque) {
         this.estoque = estoque;
-    } 
+    }
+
+    public Object getProduto() {
+        return null;
+    }
 
 }
