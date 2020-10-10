@@ -5,8 +5,8 @@ use estoqueMinusculo;
 create table produto (
 id bigint not null auto_increment,
 descricao varchar(255) not null,
-valor_compra number (4,2) not null,
-valor_venda number (4,2) not null,
+valor_compra number (10,2) not null,
+valor_venda number (10,2) not null,
 status boolean not null,
 primary key (id)
 );
