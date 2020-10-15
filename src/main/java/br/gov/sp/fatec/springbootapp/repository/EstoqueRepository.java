@@ -6,6 +6,6 @@ import br.gov.sp.fatec.springbootapp.entity.Estoque;
 
 public interface EstoqueRepository extends JpaRepository<Estoque, Long> {
 
-    Estoque findByQuantidade(int i);
+    /*Estoque findByQuantidade(int i);*/
     
 }

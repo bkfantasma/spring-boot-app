@@ -1,5 +1,7 @@
 package br.gov.sp.fatec.springbootapp.entity;
 
+import java.text.DecimalFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,10 +21,10 @@ public class Produto {
     private String descricao;
 
     @Column(name = "valor_compra")
-    private float valorCompra;
+    private DecimalFormat valorCompra;
 
     @Column(name = "valor_venda")
-    private float valorVenda;
+    private DecimalFormat valorVenda;
 
     @Column(name = "status")
     private Boolean status;
@@ -41,20 +43,20 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public Float getValorCompra(){
-        return (float) this.valorCompra;
+    public DecimalFormat getValorCompra() {
+        return (DecimalFormat) this.valorCompra;
     }
    
     public void setValorCompra(Number valorCompra) {
-        this.valorCompra = (float) valorCompra;
+        this.valorCompra = (DecimalFormat) this.valorCompra;
     }
 
-    public Float getValorVenda(){
-        return (float) this.valorVenda;
+    public DecimalFormat getValorVenda() {
+        return (DecimalFormat) this.valorVenda;
     }
 
     public void setValorVenda(Number valorVenda) {
-        this.valorCompra = (float) valorVenda;
+        this.valorCompra = (DecimalFormat) this.valorVenda;
     }
 
     public Boolean getStatus(){
@@ -63,9 +65,4 @@ public class Produto {
     public void setStatus(Boolean status){
         this.status = status;
     }
-
-    public Object getProduto() {
-        return null;
-    }
-
 }

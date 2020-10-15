@@ -66,8 +66,4 @@ public class Estoque {
     public void setIdProduto(final Long idProduto) {
         this.idProduto = idProduto;
     } 
-
-    public Object getEstoques() {
-        return null;
-    }
 }
