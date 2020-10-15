@@ -43,7 +43,6 @@ class SpringBootAppApplicationTests {
         assertNotNull(produto.getID());
     }
 
-    
    @Test
    void buscaQtdEstoque(){
     Estoque estoque = estoqueRepo.findByQuantidade(1);
