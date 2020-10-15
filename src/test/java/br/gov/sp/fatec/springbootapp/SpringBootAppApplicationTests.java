@@ -1,9 +1,9 @@
 package br.gov.sp.fatec.springbootapp;
 
-//import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-//import java.util.List;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.*;
@@ -12,6 +12,7 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.gov.sp.fatec.springbootapp.entity.Estoque;
+
 import br.gov.sp.fatec.springbootapp.entity.Produto;
 import br.gov.sp.fatec.springbootapp.repository.EstoqueRepository;
 import br.gov.sp.fatec.springbootapp.repository.ProdutoRepository;
@@ -31,10 +32,9 @@ class SpringBootAppApplicationTests {
 	void contextLoads() {
 	}
 
-
     @Test
     void testeInsercao() {
-        Produto produto = new Produto();
+        final Produto produto = new Produto();
         produto.setDescricao("embalagem");
         produto.setValorCompra((float) 10.0);
         produto.setValorVenda((float) 15.0);
@@ -43,27 +43,29 @@ class SpringBootAppApplicationTests {
         assertNotNull(produto.getID());
     }
 
-   @Test
-   void buscaQtdEstoque(){
-    Estoque estoque = estoqueRepo.findByQuantidade(1);
-    assertNotNull(estoque);
-   }
- /*@Test
-    void buscaProduto(){
-        List<Produto> produtos = produtoRepo.findByDescricaoContainsIgnoreCase("E");
+    @Test
+    void buscaProduto() {
+        final List<Produto> produtos = produtoRepo.findByDescricaoContainsIgnoreCase("E");
         assertFalse(produtos.isEmpty());
     } 
+
     @Test
-    void buscaProdutoDescicao(){
-        Produto produto = produtoRepo.findByDescricao("embalagem");
-        assertNotNull(produto);
+        void buscaValores(){
+            produtoRepo.findByValorVendaAndValorCompra((float) 10.0, (float) 15.0);
+        }
+
+    @Test
+    void buscaQtdEstoque(){
+        Estoque estoque = estoqueRepo.findByQuantidade(1);
+        assertNotNull(estoque.getQuantidade());
     }
     
     @Test
-        void buscaValores(){
-            Produto produto = produtoRepo.findByValorVendaAndValorCompra((float)10.0, (float)15.0);
-            assertNotNull(produto);
-        }
+    void buscaProdutoDescicao(){
+        produtoRepo.findByDescricao("embalagem");
+    }
+    
+    /*
     
     @Test
     void buscaProdutoDescicaoQuery(){

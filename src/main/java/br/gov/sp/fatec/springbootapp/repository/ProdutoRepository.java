@@ -9,8 +9,7 @@ import br.gov.sp.fatec.springbootapp.entity.Produto;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
-    // public Produto findByValorVendaAndValorCompra(Float valorCompra, Float
-    // valorVenda);
+    public Produto findByValorVendaAndValorCompra(Float valorCompra, Float valorVenda);
 
     public Produto findByDescricao(String descricao);
 
