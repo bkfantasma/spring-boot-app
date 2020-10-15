@@ -40,7 +40,7 @@ public class Estoque {
         return this.dataEntradaProduto;
     }
 
-    public void setDataEntradaProduto(final Calendar dataEntradaProduto) {
+    public void setDataEntradaProduto(Calendar dataEntradaProduto) {
         this.dataEntradaProduto = dataEntradaProduto;
     }
 
@@ -48,7 +48,7 @@ public class Estoque {
         return this.dataSaidaProduto;
     }
 
-    public void setDataSaidaProduto(final Calendar dataSaidaProduto) {
+    public void setDataSaidaProduto(Calendar dataSaidaProduto) {
         this.dataSaidaProduto = dataSaidaProduto;
     }
 
@@ -56,14 +56,14 @@ public class Estoque {
         return this.quantidade;
     }
 
-    public void setQuantidade(final Long quantidade) {
+    public void setQuantidade(Long quantidade) {
         this.quantidade = quantidade;
     }
 
-     public Long getIdProduto(){
+    public Long getIdProduto(){
         return this.idProduto;
     }
-    public void setIdProduto(final Long idProduto) {
+    public void setIdProduto(Long idProduto) {
         this.idProduto = idProduto;
     } 
 }

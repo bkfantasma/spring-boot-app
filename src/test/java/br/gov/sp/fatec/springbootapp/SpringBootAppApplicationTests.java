@@ -16,6 +16,7 @@ import br.gov.sp.fatec.springbootapp.entity.Estoque;
 import br.gov.sp.fatec.springbootapp.entity.Produto;
 import br.gov.sp.fatec.springbootapp.repository.EstoqueRepository;
 import br.gov.sp.fatec.springbootapp.repository.ProdutoRepository;
+import br.gov.sp.fatec.springbootapp.service.SegurancaService;
 
 @SpringBootTest
 @Transactional
@@ -28,6 +29,9 @@ class SpringBootAppApplicationTests {
     @Autowired
     private EstoqueRepository estoqueRepo;
 
+    @Autowired
+    private SegurancaService segService;
+
 	@Test
 	void contextLoads() {
 	}
@@ -35,7 +39,7 @@ class SpringBootAppApplicationTests {
     @Test
     void testeInsercao() {
         final Produto produto = new Produto();
-        produto.setDescricao("embalagem");
+        produto.setDescricao("lapis");
         produto.setValorCompra((float) 10.0);
         produto.setValorVenda((float) 15.0);
         produto.setStatus(true);
@@ -45,7 +49,7 @@ class SpringBootAppApplicationTests {
 
     @Test
     void buscaProduto() {
-        final List<Produto> produtos = produtoRepo.findByDescricaoContainsIgnoreCase("E");
+        List<Produto> produtos = produtoRepo.findByDescricaoContainsIgnoreCase("E");
         assertFalse(produtos.isEmpty());
     } 
 
@@ -56,30 +60,29 @@ class SpringBootAppApplicationTests {
 
     @Test
     void buscaQtdEstoque(){
-        Estoque estoque = estoqueRepo.findByQuantidade(1);
+        Estoque estoque = estoqueRepo.findByQuantidade((long) 1);
         assertNotNull(estoque.getQuantidade());
     }
-    
+
     @Test
-    void buscaProdutoDescicao(){
-        produtoRepo.findByDescricao("embalagem");
+    void buscaProdutoDescicao() {
+        produtoRepo.findByDescricao((String) "batata");
+        
     }
-    
-    /*
-    
+        
     @Test
     void buscaProdutoDescicaoQuery(){
-        Produto produto = produtoRepo.buscaPorProduto("embalagem");
-        assertNotNull(produto);
+        produtoRepo.buscaPorProduto("batata");
     }
     
     @Test
     void buscaValoresQuery(){
-        Produto produto = produtoRepo.BuscaProdutoValores(10.00, 15.00);
-        assertNotNull(produto);
-    }*/
-   
+        produtoRepo.buscaProdutoValores((float) 10.0, (float) 15.0);
+    }
 
-
+    @Test
+    void testaCriaProduto(){
+        segService.criarProduto("PC", (float) 2000.0, (float) 1000.0, true);
+    }
 
 }
