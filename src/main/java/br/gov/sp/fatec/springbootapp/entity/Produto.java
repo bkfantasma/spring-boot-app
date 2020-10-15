@@ -47,7 +47,7 @@ public class Produto {
         return (DecimalFormat) this.valorCompra;
     }
    
-    public void setValorCompra(Number valorCompra) {
+    public void setValorCompra(double valorCompra) {
         this.valorCompra = (DecimalFormat) this.valorCompra;
     }
 
@@ -55,8 +55,8 @@ public class Produto {
         return (DecimalFormat) this.valorVenda;
     }
 
-    public void setValorVenda(Number valorVenda) {
-        this.valorCompra = (DecimalFormat) this.valorVenda;
+    public void setValorVenda(double valorVenda) {
+        this.valorVenda = (DecimalFormat) this.valorVenda;
     }
 
     public Boolean getStatus(){
