@@ -5,8 +5,13 @@ use estoqueMinusculo;
 create table produto (
 id bigint not null auto_increment,
 descricao varchar(255) not null,
+<<<<<<< HEAD
 valor_compra float (10,2),
 valor_venda float (10,2),
+=======
+valor_compra decimal (10,2),
+valor_venda decimal (10,2),
+>>>>>>> 9cb1dd5214916c9260180a9aa4d18f79eea528d0
 status boolean not null,
 primary key (id)
 );

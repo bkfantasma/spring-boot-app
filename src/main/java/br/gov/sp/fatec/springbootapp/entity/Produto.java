@@ -1,6 +1,5 @@
 package br.gov.sp.fatec.springbootapp.entity;
 
-
 import java.util.List;
 
 import javax.persistence.Column;
@@ -52,8 +51,9 @@ public class Produto {
 
     public void setValorCompra(Float valorCompra) {
         this.valorCompra = (Float) valorCompra;
-    }
 
+    }
+ 
     public Float getValorVenda() {
         return (Float) this.valorVenda;
     }
