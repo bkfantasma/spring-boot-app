@@ -1,5 +1,7 @@
 package br.gov.sp.fatec.springbootapp.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +27,11 @@ public class SegurancaServiceImpl implements SegurancaService {
         produtoRepo.save(produto);
         return produto;
     }
+
+    @Override
+    public List<Produto> buscarTodosProdutos(){
+        return produtoRepo.findAll();
+    }
+
     
 }
