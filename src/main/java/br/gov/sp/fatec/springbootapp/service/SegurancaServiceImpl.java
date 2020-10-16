@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.gov.sp.fatec.springbootapp.entity.Produto;
+import br.gov.sp.fatec.springbootapp.exception.RegistroNaoEncontradoException;
 import br.gov.sp.fatec.springbootapp.repository.ProdutoRepository;
 
 @Transactional
@@ -40,7 +41,7 @@ public class SegurancaServiceImpl implements SegurancaService {
         if(produtoOp.isPresent()){
             return produtoOp.get();
         }
-        throw new RuntimeException("Produto não encontrado");
+        throw new RegistroNaoEncontradoException("Produto não encontrado");
     }
 
     @Override
@@ -49,6 +50,6 @@ public class SegurancaServiceImpl implements SegurancaService {
         if(produto != null){
             return produto;
         }
-        throw new RuntimeException("Produto não encontrado");
+        throw new RegistroNaoEncontradoException("Produto não encontrado");
     }
 }
