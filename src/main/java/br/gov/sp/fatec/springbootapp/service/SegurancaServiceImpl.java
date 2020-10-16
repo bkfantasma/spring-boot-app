@@ -31,7 +31,5 @@ public class SegurancaServiceImpl implements SegurancaService {
     @Override
     public List<Produto> buscarTodosProdutos(){
         return produtoRepo.findAll();
-    }
-
-    
+    }    
 }
