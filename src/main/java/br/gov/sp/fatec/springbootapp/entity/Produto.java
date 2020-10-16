@@ -9,23 +9,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import br.gov.sp.fatec.springbootapp.controller.View;
+
 @Entity
 @Table(name = "produto")
 public class Produto {
+
+    @JsonView(View.ProdutoCompleto.class)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long ID;
 
+    @JsonView(View.ProdutoResumo.class)
     @Column(name = "descricao")
     private String descricao;
 
+    @JsonView(View.ProdutoResumo.class)
     @Column(name = "valor_compra")
     private Float valorCompra;
 
+    @JsonView(View.ProdutoResumo.class)
     @Column(name = "valor_venda")
     private Float valorVenda;
 
+    @JsonView(View.ProdutoResumo.class)
     @Column(name = "status")
     private Boolean status;
 

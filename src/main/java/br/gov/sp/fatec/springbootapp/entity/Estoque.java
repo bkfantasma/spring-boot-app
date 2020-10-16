@@ -9,23 +9,34 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import br.gov.sp.fatec.springbootapp.controller.View;
+
 @Entity
 @Table(name = "estoque")
 public class Estoque {
+
+    @JsonView(View.EstoqueCompleto.class)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long ID;
 
+    @JsonView(View.EstoqueResumo.class)
     @Column(name = "data_entrada_produto")
     private Calendar dataEntradaProduto;
 
+    @JsonView(View.EstoqueResumo.class)
     @Column(name = "data_saida_produto")
     private Calendar dataSaidaProduto;
 
+
+    @JsonView(View.EstoqueResumo.class)
     @Column(name = "quantidade")
     private long quantidade;
     
+    @JsonView(View.EstoqueResumo.class)
     @Column(name = "id_produto") 
     private long idProduto;
     

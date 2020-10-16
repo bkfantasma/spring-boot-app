@@ -6,13 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.gov.sp.fatec.springbootapp.entity.Estoque;
-
 import br.gov.sp.fatec.springbootapp.entity.Produto;
 import br.gov.sp.fatec.springbootapp.repository.EstoqueRepository;
 import br.gov.sp.fatec.springbootapp.repository.ProdutoRepository;
