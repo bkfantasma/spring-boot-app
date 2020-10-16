@@ -16,8 +16,6 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
     public List<Produto> findByDescricaoContainsIgnoreCase(String descricao);
 
-
-
     @Query("select p from Produto p where p.valorVenda = ?1 and p.valorCompra = ?2")
     public Produto buscaProdutoValores(Float valorVenda, Float valorCompra);
 

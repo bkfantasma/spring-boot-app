@@ -10,6 +10,8 @@ public interface SegurancaService {
 
     public List<Produto> buscarTodosProdutos();
 
-    //public Produto buscaProdutoId(Long ID);
+    public Produto buscaProdutoId(Long ID);
+
+    public Produto buscaPorDescricao(String descricao);
     
 }

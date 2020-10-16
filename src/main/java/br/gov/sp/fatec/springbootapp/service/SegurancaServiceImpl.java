@@ -1,6 +1,7 @@
 package br.gov.sp.fatec.springbootapp.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -31,5 +32,23 @@ public class SegurancaServiceImpl implements SegurancaService {
     @Override
     public List<Produto> buscarTodosProdutos(){
         return produtoRepo.findAll();
-    }    
+    }
+
+    @Override
+    public Produto buscaProdutoId(Long ID) {
+        Optional<Produto> produtoOp = produtoRepo.findById(ID);
+        if(produtoOp.isPresent()){
+            return produtoOp.get();
+        }
+        throw new RuntimeException("Produto não encontrado");
+    }
+
+    @Override
+    public Produto buscaPorDescricao(String descricao){
+        Produto produto =produtoRepo.findByDescricao(descricao);
+        if(produto != null){
+            return produto;
+        }
+        throw new RuntimeException("Produto não encontrado");
+    }
 }
