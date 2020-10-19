@@ -9,7 +9,7 @@ valor_compra float (10,2),
 valor_venda float (10,2),
 status boolean not null,
 -- id_estoque bigint,
-primary key (id),
+primary key (id)
 -- foreign key id_estoque_fk (id_estoque) references estoque(id) 
 );
 
