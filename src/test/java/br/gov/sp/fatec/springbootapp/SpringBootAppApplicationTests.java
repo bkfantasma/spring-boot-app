@@ -31,9 +31,9 @@ class SpringBootAppApplicationTests {
     @Autowired
     private SegurancaService segService;
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
     @Test
     void testeInsercao() {
@@ -46,42 +46,48 @@ class SpringBootAppApplicationTests {
         assertNotNull(produto.getID());
     }
 
-    @Test
-    void buscaProduto() {
-        List<Produto> produtos = produtoRepo.findByDescricaoContainsIgnoreCase("E");
-        assertFalse(produtos.isEmpty());
-    } 
-
-    @Test
-        void buscaValores(){
-            produtoRepo.findByValorVendaAndValorCompra((float) 10.0, (float) 15.0);
-        }
-
-    @Test
-    void buscaQtdEstoque(){
-        Estoque estoque = estoqueRepo.findByQuantidade((long) 2);
-        assertNotNull(estoque.getQuantidade());
-    }
-
-    @Test
-    void buscaProdutoDescicao() {
-        produtoRepo.findByDescricao((String) "batata");
-        
-    }
-        
-    @Test
-    void buscaProdutoDescicaoQuery(){
-        produtoRepo.buscaPorProduto("batata");
-    }
-    
-    @Test
-    void buscaValoresQuery(){
-        produtoRepo.buscaProdutoValores((float) 10.0, (float) 15.0);
-    }
-
-    @Test
-    void testaCriaProduto(){
-        segService.criarProduto("PC", (float) 2000.0, (float) 1000.0, true);
-    }
-
+//    @Test
+//    void buscaProduto() {
+//        List<Produto> produtos = produtoRepo.findByDescricaoContainsIgnoreCase("E");
+//        assertFalse(produtos.isEmpty());
+//    }
+//
+//    @Test
+//    void buscaValores() {
+//        produtoRepo.findByValorVendaAndValorCompra((float) 10.0, (float) 15.0);
+//    }
+//
+//    @Test
+//    void buscaQtdEstoque() {
+//        Estoque estoque = estoqueRepo.findByQuantidade((long) 2);
+//        assertNotNull(estoque.getQuantidade());
+//    }
+//
+//    @Test
+//    void testebusca() {
+//        List<Produto> produto = produtoRepo.busca((long) 2);
+//        assertFalse(produto.isEmpty());
+////    }
+//
+//    @Test
+//    void buscaProdutoDescicao() {
+//        produtoRepo.findByDescricao((String) "batata");
+//        
+//    }
+//        
+//    @Test
+//    void buscaProdutoDescicaoQuery(){
+//        produtoRepo.buscaPorProduto("batata");
+//    }
+//    
+//    @Test
+//    void buscaValoresQuery(){
+//        produtoRepo.buscaProdutoValores((float) 10.0, (float) 15.0);
+//    }
+//
+//    @Test
+//    void testaCriaProduto(){
+//        segService.criarProduto("PC", (float) 2000.0, (float) 1000.0, true);
+//    }
+//
 }
