@@ -8,7 +8,10 @@ descricao varchar(255) not null,
 valor_compra float (10,2),
 valor_venda float (10,2),
 status boolean not null,
-primary key (id)
+estoque_id bigint not null,
+primary key (id),
+foreign key id_estoque_fk (id_estoque) references estoque(id) 
+
 );
 
 create table estoque (

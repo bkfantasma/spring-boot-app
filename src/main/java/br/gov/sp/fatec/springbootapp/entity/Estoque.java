@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -37,7 +39,8 @@ public class Estoque {
     private long quantidade;
     
     @JsonView(View.EstoqueResumo.class)
-    @Column(name = "id_produto") 
+    @ManyToOne
+    @JoinColumn(name = "id_produto") 
     private long idProduto;
     
     public Long getID() {
