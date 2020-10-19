@@ -8,7 +8,7 @@ descricao varchar(255) not null,
 valor_compra float (10,2),
 valor_venda float (10,2),
 status boolean not null,
-estoque_id bigint not null,
+id_estoque bigint not null,
 primary key (id),
 foreign key id_estoque_fk (id_estoque) references estoque(id) 
 
