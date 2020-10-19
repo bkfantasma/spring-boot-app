@@ -9,7 +9,7 @@ valor_compra float (10,2),
 valor_venda float (10,2),
 status boolean not null,
 id_estoque bigint (255),
-primary key (id),
+primary key (id)
 
 -- alter table produto add constraint id_estoque_fk foreign key (id_estoque) references estoque(id)
 
