@@ -1,12 +1,13 @@
 package br.gov.sp.fatec.springbootapp.entity;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -38,6 +39,11 @@ public class Produto {
     @JsonView(View.ProdutoResumo.class)
     @Column(name = "status")
     private Boolean status;
+
+    @JsonView(View.ProdutoResumo.class)
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "id_estoque", nullable = true) 
+    private Estoque estoque;
 
     public Long getID() {
         return this.ID;
@@ -80,7 +86,12 @@ public class Produto {
         this.status = status;
     }
 
-    public List<Produto> getProdutos() {
-        return null;
+    public Estoque getEstoque() {
+        return this.estoque;
     }
+
+    public void setEstoque(Estoque estoque) {
+        this.estoque = estoque;
+    }
+
 }

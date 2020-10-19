@@ -1,14 +1,15 @@
 package br.gov.sp.fatec.springbootapp.entity;
 
 import java.util.Calendar;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonView;
@@ -33,15 +34,13 @@ public class Estoque {
     @Column(name = "data_saida_produto")
     private Calendar dataSaidaProduto;
 
-
     @JsonView(View.EstoqueResumo.class)
     @Column(name = "quantidade")
     private long quantidade;
     
     @JsonView(View.EstoqueResumo.class)
-    @ManyToOne
-    @JoinColumn(name = "id_produto") 
-    private long idProduto;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "estoque")
+    private Set<Produto> produtos;
     
     public Long getID() {
         return this.ID;
@@ -74,10 +73,11 @@ public class Estoque {
         this.quantidade = quantidade;
     }
 
-    public Long getIdProduto(){
-        return this.idProduto;
+      public Set<Produto> getProdutos() {
+        return this.produtos;
     }
-    public void setIdProduto(Long idProduto) {
-        this.idProduto = idProduto;
-    } 
+
+    public void setProduto(Set<Produto> produtos) {
+        this.produtos = produtos;
+    }
 }

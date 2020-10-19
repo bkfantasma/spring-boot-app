@@ -59,7 +59,7 @@ class SpringBootAppApplicationTests {
 
     @Test
     void buscaQtdEstoque(){
-        Estoque estoque = estoqueRepo.findByQuantidade((long) 1);
+        Estoque estoque = estoqueRepo.findByQuantidade((long) 2);
         assertNotNull(estoque.getQuantidade());
     }
 
