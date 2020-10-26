@@ -22,6 +22,8 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinColumn(name = "id_estoque", nullable = true) 
     private Long ID;
 
     @JsonView(View.ProdutoResumo.class)
@@ -39,11 +41,6 @@ public class Produto {
     @JsonView(View.ProdutoResumo.class)
     @Column(name = "status")
     private Boolean status;
-
-    @JsonView(View.ProdutoResumo.class)
-    @ManyToOne(fetch = FetchType.EAGER, optional = true)
-    @JoinColumn(name = "id_estoque", nullable = true) 
-    private Estoque estoque;
 
     public Long getID() {
         return this.ID;
@@ -86,12 +83,5 @@ public class Produto {
         this.status = status;
     }
 
-    public Estoque getEstoque() {
-        return this.estoque;
-    }
-
-    public void setEstoque(Estoque estoque) {
-        this.estoque = estoque;
-    }
 
 }

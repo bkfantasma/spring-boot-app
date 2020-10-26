@@ -39,7 +39,7 @@ public class Estoque {
     private long quantidade;
     
     @JsonView(View.EstoqueResumo.class)
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "estoque")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "ID")
     private Set<Produto> produtos;
     
     public Long getID() {

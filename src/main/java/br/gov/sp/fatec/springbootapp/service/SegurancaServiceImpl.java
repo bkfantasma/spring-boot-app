@@ -45,11 +45,17 @@ public class SegurancaServiceImpl implements SegurancaService {
     }
 
     @Override
-    public Produto buscaPorDescricao(String descricao){
-        Produto produto =produtoRepo.findByDescricao(descricao);
-        if(produto != null){
-            return produto;
-        }
-        throw new RegistroNaoEncontradoException("Produto não encontrado");
+    public Produto buscaPorDescricao(String descricao) {
+        // TODO Auto-generated method stub
+        return null;
     }
+
+//    @Override
+//    public Produto buscaPorDescricao(String descricao){
+//        Produto produto =produtoRepo.findByDescricao(descricao);
+//        if(produto != null){
+//            return produto;
+//        }
+//        throw new RegistroNaoEncontradoException("Produto não encontrado");
+//    }
 }
